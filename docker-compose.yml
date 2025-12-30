@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ar_deep_dive
+    ports:
+      - "5555:5432" # ローカルの5555をコンテナの5432に繋ぐ
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
